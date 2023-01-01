@@ -31,7 +31,20 @@
 }
 
 #header {
+    font-weight: bold;
+}
 
+#main {
+    display: flex;
+    width: 100vw;
+}
+
+#nav {
+    width: clamp(250px, 50vw, 300px)
+}
+
+#content {
+    width: 900px;
 }
 
 #footer {
