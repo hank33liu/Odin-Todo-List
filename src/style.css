@@ -18,6 +18,9 @@
 :root {
     --header-height: 2.5rem;
     --footer-height: 2.5rem;
+    --primary-color: rgba(51, 51, 51, 255);
+    --secondary-color: rgba(221, 221, 221, 255);
+    --tertiary-color: rgba(238, 238, 238, 255);
 }
 
 /* CSS Reset */
@@ -37,31 +40,67 @@
 }
 
 #header {
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
     font-size: 3rem;
     font-weight: bold;
-    margin: 1rem 0;
+    height: 5rem;
 }
 
 #main {
     display: flex;
+    flex-grow: 1;
     width: 100vw;
     margin-bottom: 2.5rem;
 }
 
 #nav {
+    background-color: var(--tertiary-color);
     min-width: clamp(250px, 50vw, 300px);
     padding: 1rem;
 }
 
+.sub-nav {
+    margin-bottom: 2rem;
+}
+
+.sub-nav-header {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
 .nav-item {
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.nav-item img {
+    margin-right:0.5rem;
+    width: 1.5rem;
 }
 
 #matter {
     max-width: 900px;
 }
 
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.list-item img {
+    margin-right: 0.5rem;
+    width: 1.5rem;
+}
+
 #footer {
+    background-color: var(--primary-color);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
