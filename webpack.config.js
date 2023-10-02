@@ -5,8 +5,9 @@ module.exports = {
   // mode: 'development', //remove for production
   entry: {
     main: './src/index.js',
+    projectScripts: './src/projectScripts.js',
   },
-  // devtool: 'inline-source-map', //remove for production
+  devtool: 'inline-source-map', // remove for production
   // devServer: {
   //     static: './dist',
   // }, //remove for production

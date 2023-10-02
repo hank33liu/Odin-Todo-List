@@ -1,8 +1,12 @@
 import './style.css';
+import { add } from 'date-fns';
 import taskIcon from './images/inbox.svg';
+import todayIcon from './images/calendar-today.svg';
+import weekIcon from './images/calendar-week.svg';
+import addIcon from './images/plus-circle.svg';
+import { Project, listProjects, parseProject } from './projectScripts';
 
 console.log('index.js is working!');
-console.log('updates are coming');
 
 // Fill home page
 function content() {
@@ -33,16 +37,19 @@ function content() {
   const home = document.createElement('div');
   home.className = 'sub-nav-header';
   home.textContent = 'Home';
-
-  const home1 = document.createElement('div');
-  home1.className = 'nav-item';
-  const home1Img = document.createElement('img');
-  home1Img.src = taskIcon;
-  home1.textContent = 'All Tasks';
-  home1.insertBefore(home1Img, home1.firstChild);
-
   nav.querySelector('.sub-nav').appendChild(home);
-  nav.querySelector('.sub-nav').appendChild(home1);
+
+  // Add Home Items
+  const homeItems = [['All Tasks', taskIcon], ['Today', todayIcon], ['Next 7 Days', weekIcon]];
+  for (let i = 0; i < 3; i++) {
+    const homeItem = document.createElement('div');
+    homeItem.className = 'nav-item';
+    const homeItemImg = document.createElement('img');
+    homeItemImg.src = homeItems[i][1];
+    homeItem.textContent = homeItems[i][0];
+    homeItem.insertBefore(homeItemImg, homeItem.firstChild);
+    nav.querySelector('.sub-nav').appendChild(homeItem);
+  }
 
   const projects = document.createElement('div');
   projects.className = 'sub-nav-header';
@@ -53,6 +60,18 @@ function content() {
   matter.id = 'matter';
   main.appendChild(matter);
 
+  // Add 'Add Project' to Projects
+  const addProjects = document.createElement('div');
+  addProjects.className = 'add-item';
+  const addProjectsImg = document.createElement('img');
+  addProjectsImg.src = addIcon;
+  addProjects.textContent = 'Add Project';
+  addProjects.insertBefore(addProjectsImg, addProjects.firstChild);
+  nav.querySelector('.sub-nav:nth-child(2)').appendChild(addProjects);
+
+  // Add function to 'Add Project'
+  // addProjects.addEventListener('click', TBD);
+
   // footer
   const footer = document.createElement('div');
   footer.id = 'footer';
@@ -61,5 +80,22 @@ function content() {
 
   return content;
 }
-
 document.body.appendChild(content());
+
+// Holds all projects
+const allProjects = [];
+// Create default project
+const defaultProject = new Project('Default Project', [
+  ['eat', true],
+  ['sleep', false],
+]);
+// Add default project to all projects
+allProjects.push(defaultProject);
+const projectItems = listProjects(allProjects);
+projectItems.forEach((project) => {
+  document.getElementById('nav').querySelector('.sub-nav:nth-child(2)').insertBefore(project, document.getElementById('nav').querySelector('.sub-nav:nth-child(2)').lastChild);
+});
+// Display default project
+const defaultProjectMatter = parseProject(defaultProject);
+document.getElementById('matter').appendChild(defaultProjectMatter[0]);
+document.getElementById('matter').appendChild(defaultProjectMatter[1]);
