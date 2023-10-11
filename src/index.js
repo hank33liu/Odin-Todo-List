@@ -70,12 +70,15 @@ function content() {
   nav.querySelector('.sub-nav:nth-child(2)').appendChild(addProjects);
 
   // Add function to 'Add Project'
-  // addProjects.addEventListener('click', TBD);
+  addProjects.addEventListener('click', (e) => {
+    console.log('Add Project Button is working!');
+    console.log(this);
+  });
 
   // footer
   const footer = document.createElement('div');
   footer.id = 'footer';
-  footer.textContent = 'Last updated September 2023';
+  footer.textContent = 'Last updated October 2023';
   content.appendChild(footer);
 
   return content;

@@ -4,11 +4,13 @@ import projectIcon from './images/format-list-bulleted.svg';
 
 console.log('project_script is working!');
 
+// Format for project objects
 function Project(title, tasks) {
   this.title = title;
   this.tasks = tasks;
 }
 
+// Used to display list of projects in the nav bar
 function listProjects(projects) {
   const projectItems = [];
   projects.forEach((project) => {
@@ -23,6 +25,7 @@ function listProjects(projects) {
   return projectItems;
 }
 
+// Used to display project material in content seciton
 function parseProject(project, event) {
   const projectTitle = document.createElement('div');
   projectTitle.className = 'matter-header';
