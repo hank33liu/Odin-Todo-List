@@ -42,10 +42,12 @@
                         <img src="./images/plus-circle.svg">
                         Add Project
                     </div>
-                    <div>
-                        <input id="add-project-field">
-                        <button>sdfsdf</button>
-                        <button>sdfsdf</button>
+                    <div id="add-project-popup">
+                        <input type="text" placeholder="New Project Title" id="add-project-input" required>
+                        <div class="todo-buttons">
+                            <button class="todo-button add-button" id="add-project-button" type="submit">Add</button>
+                            <button class="todo-button cancel-button" class="cancel-button" id="cancel-project-button">Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,9 +71,16 @@
                     <img src="./images/plus-circle.svg">
                     Add Task
                 </div>
+                <div id="add-task-popup">
+                    <input type="text" placeholder="New Task" id="add-task-input" required>
+                    <div class="todo-buttons">
+                        <button class="todo-button add-button" id="add-task-button" type="submit">Add</button>
+                        <button class="todo-button cancel-button" class="cancel-button" id="cancel-task-button">Cancel</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="footer">Last updated January 2023</div>
+        <div id="footer">Last updated October 2023</div>
     </div>
 </body>
 </html>

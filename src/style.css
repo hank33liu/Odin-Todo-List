@@ -73,6 +73,7 @@
 }
 
 .nav-item {
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
@@ -81,6 +82,47 @@
 .nav-item img {
     margin-right:0.5rem;
     width: 1.5rem;
+}
+
+#add-project-input {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+#add-task-input {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.todo-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.todo-button {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.todo-button:hover {
+    filter: brightness(90%);
+}
+
+.add-button {
+    background-color: #aaffaa;
+    border: 1px solid #99dd99;
+}
+
+.cancel-button {
+    background-color: #ffbebe;
+    border: 1px solid #eeadad;
 }
 
 #matter {
